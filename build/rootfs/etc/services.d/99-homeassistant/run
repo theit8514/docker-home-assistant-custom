@@ -2,4 +2,7 @@
 s6-setuidgid abc
 cd /usr/src/app
 
+sleep 10
+s6-svwait -t 5000 -U /var/run/s6/services/socat
+
 exec python -m homeassistant --config /config
