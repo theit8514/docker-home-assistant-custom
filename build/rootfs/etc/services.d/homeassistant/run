@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+s6-setuidgid abc
+cd /usr/src/app
+
+exec python -m homeassistant --config /config

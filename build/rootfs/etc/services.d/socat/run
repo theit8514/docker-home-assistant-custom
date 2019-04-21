@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+#s6-setuidgid abc
+#cd /usr/src/app
+
+[ -f /config/socat.conf ] && source /config/socat.conf
+
+exec /usr/bin/socat -d -d -d -lf /config/socat.log $OPTIONS
